@@ -57,7 +57,7 @@ describe LinkedList do
       @list.append("Hardy")
   end
 
-  xit ".find" do
+  it ".find" do
     @list.append("Rhodes")
     @list.append("Jones")
     @list.append("Lanes")

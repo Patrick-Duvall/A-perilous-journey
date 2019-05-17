@@ -43,15 +43,19 @@ class LinkedList
   end
 
   def find(start,number)
-    return "" if @head == nil
-  else
+     if @head == nil
+       return ""
+     else
     current_node = @head
-    (start -1).times do |x|
+    (start-1).times do |x|
       current_node = current_node.next_node
     end
-    insert = []
-    number.times do |x|
-      insert
+    string = "The #{current_node.surname} family"
+    (number-1).times do |x|
+      current_node = current_node.next_node
+      string += ", followed by the #{current_node.surname} family"
+    end
+    string
   end
 
   end
@@ -72,7 +76,6 @@ class LinkedList
     return false if @head == nil
     current_node = @head
     until current_node.last?
-      require "pry"; binding.pry
       last_node = current_node
       current_node = current_node.next_node
     end
