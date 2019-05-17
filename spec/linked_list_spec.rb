@@ -6,8 +6,13 @@ describe LinkedList do
     @list = LinkedList.new
   end
   it 'has a head initially nil' do
-
   expect(@list.head).to eq(nil)
+  end
+
+  it '.last?' do
+    expect(@list.empty?).to eq(true)
+    @list.append("West")
+    expect(@list.empty?).to eq(false)
   end
 
   it '.append' do

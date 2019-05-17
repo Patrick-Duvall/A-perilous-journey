@@ -6,12 +6,16 @@ class LinkedList
     @head = nil
   end
 
+  def empty?
+    @head == nil
+  end
+
   def append(name)
-    if @head == nil
+    if empty?
       @head = Node.new(name)
     else
       current_node = @head
-      until current_node.next_node == nil
+      until current_node.last?
         current_node = current_node.next_node
       end
       current_node.next_node = Node.new(name)
@@ -19,7 +23,7 @@ class LinkedList
   end
 
   def prepend(name)
-    if @head == nil
+    if empty?
       @head = Node.new(name)
     else
       old_head = @head
@@ -29,7 +33,7 @@ class LinkedList
   end
 
   def insert(position,name)
-    if @head == nil
+    if empty?
       @head = Node.new(name)
     else
       current_node = @head
@@ -43,7 +47,7 @@ class LinkedList
   end
 
   def find(start,number)
-     if @head == nil
+     if empty?
        return ""
      else
     current_node = @head
@@ -61,10 +65,10 @@ class LinkedList
   end
 
   def includes?(name)
-    return false if @head == nil
+    return false if empty?
     flag = false
     current_node = @head
-    until current_node.next_node == nil
+    until current_node.last?
       flag = true if current_node.surname == name
       current_node = current_node.next_node
     end
@@ -73,7 +77,7 @@ class LinkedList
   end
 
   def pop
-    return false if @head == nil
+    return false if empty?
     current_node = @head
     until current_node.last?
       last_node = current_node
@@ -94,7 +98,7 @@ class LinkedList
       current_node = @head.next_node
       until counter == count
         initial += ", followed by the #{current_node.surname} family"
-        current_node = current_node.next_node unless current_node.next_node == nil
+        current_node = current_node.next_node unless current_node.last?
         counter +=1
       end
     end
@@ -108,7 +112,7 @@ class LinkedList
    else
      counter +=1
     current_node = @head
-    until current_node.next_node == nil
+    until current_node.last?
     current_node = current_node.next_node
     counter +=1
     end
