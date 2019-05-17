@@ -5,5 +5,13 @@ class LinkedList
   def initialize
     @head = nil
   end
-  #code
+
+  def append(name)
+    @head = Node.new(name)
+  end
+
+  def to_string
+    surname = @head.surname
+    "The #{surname} Family"
+  end
 end
