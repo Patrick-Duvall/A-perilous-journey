@@ -42,6 +42,20 @@ class LinkedList
   end
   end
 
+  def find(start,number)
+    return "" if @head == nil
+  else
+    current_node = @head
+    (start -1).times do |x|
+      current_node = current_node.next_node
+    end
+    insert = []
+    number.times do |x|
+      insert
+  end
+
+  end
+
   def includes?(name)
     return false if @head == nil
     flag = false
@@ -56,6 +70,15 @@ class LinkedList
 
   def pop
     return false if @head == nil
+    current_node = @head
+    until current_node.last?
+      require "pry"; binding.pry
+      last_node = current_node
+      current_node = current_node.next_node
+    end
+    string = "The #{current_node.surname} family has died of dysentary"
+    last_node.next_node = nil
+    string
   end
 
   def to_string

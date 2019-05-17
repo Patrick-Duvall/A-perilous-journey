@@ -58,6 +58,11 @@ describe LinkedList do
   end
 
   xit ".find" do
+    @list.append("Rhodes")
+    @list.append("Jones")
+    @list.append("Lanes")
+    expect(@list.find(2,1)).to eq("The Jones family")
+    expect(@list.find(1,3)).to eq("The Rhodes family, followed by the Jones family, followed by the Lanes family")
   end
   it ".includes?" do
     @list.append("Rhodes")
@@ -73,7 +78,7 @@ describe LinkedList do
     @list.append("Jones")
     @list.append("Lanes")
     expect(@list.pop).to eq("The Lanes family has died of dysentary")
-    expect(@list.to_string).to eq("The Rhodes family, followed by the Jones family")
+    expect(@list.to_string).to eq("The Rhodes Family, followed by the Jones family")
   end
 
 
