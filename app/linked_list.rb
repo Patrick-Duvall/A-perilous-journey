@@ -40,7 +40,22 @@ class LinkedList
     current_node.next_node = Node.new(name)
     current_node.next_node.next_node = old_next_node
   end
+  end
 
+  def includes?(name)
+    return false if @head == nil
+    flag = false
+    current_node = @head
+    until current_node.next_node == nil
+      flag = true if current_node.surname == name
+      current_node = current_node.next_node
+    end
+    flag = true if current_node.surname == name
+    flag
+  end
+
+  def pop
+    return false if @head == nil
   end
 
   def to_string

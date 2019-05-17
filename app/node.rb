@@ -7,4 +7,8 @@ class Node
     @next_node = nil
   end
 
+  def last?
+    @next_node == nil
+  end
+
 end

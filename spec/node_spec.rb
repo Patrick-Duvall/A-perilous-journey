@@ -10,4 +10,11 @@ describe Node do
 
   end
 
+  it '.last?' do
+    node = Node.new("Name")
+    expect(node.last?).to eq(true)
+    node.next_node = Node.new("Next")
+    expect(node.last?).to eq(false)
+  end
+
 end

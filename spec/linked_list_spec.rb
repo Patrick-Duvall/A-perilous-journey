@@ -57,5 +57,24 @@ describe LinkedList do
       @list.append("Hardy")
   end
 
+  xit ".find" do
+  end
+  it ".includes?" do
+    @list.append("Rhodes")
+    @list.append("Jones")
+    @list.append("Lanes")
+    expect(@list.includes?("Rhodes")).to eq(true)
+    expect(@list.includes?("Lanes")).to eq(true)
+    expect(@list.includes?("Daley")).to eq(false)
+  end
+
+  it ".pop" do
+    @list.append("Rhodes")
+    @list.append("Jones")
+    @list.append("Lanes")
+    expect(@list.pop).to eq("The Lanes family has died of dysentary")
+    expect(@list.to_string).to eq("The Rhodes family, followed by the Jones family")
+  end
+
 
 end
