@@ -26,6 +26,20 @@ class LinkedList
       @head = Node.new(name)
       @head.next_node = old_head
     end
+  end
+
+  def insert(position,name)
+    if @head == nil
+      @head = Node.new(name)
+    else
+      current_node = @head
+    (position -1).times do |x|
+      current_node = current_node.next_node
+    end
+    old_next_node = current_node.next_node
+    current_node.next_node = Node.new(name)
+    current_node.next_node.next_node = old_next_node
+  end
 
   end
 
