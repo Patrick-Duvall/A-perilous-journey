@@ -32,6 +32,13 @@ describe LinkedList do
     expect(@list.count).to eq(3)
   end
 
+  it '.prepend' do
+    @list.append("McKinney")
+    @list.append("Brooks")
+    @list.prepend("Henderson")
+    expect(@list.to_string).to eq("The Henderson Family, followed by the McKinney family, followed by the Brooks family")
+  end
+
   it ".to_string" do
       @list.append("Rhodes")
       expect(@list.to_string).to eq("The Rhodes Family")

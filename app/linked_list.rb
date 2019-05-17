@@ -18,6 +18,17 @@ class LinkedList
     end
   end
 
+  def prepend(name)
+    if @head == nil
+      @head = Node.new(name)
+    else
+      old_head = @head
+      @head = Node.new(name)
+      @head.next_node = old_head
+    end
+
+  end
+
   def to_string
     surname = @head.surname
     initial = "The #{surname} Family"
